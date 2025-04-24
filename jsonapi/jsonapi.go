@@ -127,7 +127,7 @@ func UpdateEmail(db *sql.DB) http.Handler {
 		entry := mdb.EmailEntry{}
 		fromJson(req.Body, &entry)
 
-		if err := mdb.UpdateEmail(db, entry.Email); err != nil {
+		if err := mdb.UpdateEmail(db, entry); err != nil {
 			returnErr(w, err, 400)
 			return
 		}
