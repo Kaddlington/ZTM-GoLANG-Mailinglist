@@ -102,7 +102,7 @@ func UpdateEmail(db *sql.DB, entry EmailEntry) error {
 	return nil
 }
 
-func DeleteEMail(db *sql.DB, email string) error {
+func DeleteEmail(db *sql.DB, email string) error {
 	_, err := db.Exec(`
 		UPDATE emails
 		SET opt_out=true
